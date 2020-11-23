@@ -1,4 +1,4 @@
-package com.exemplo.crudjpa.jpa;
+package com.exemplo.crudjpa.testeCrudJpa;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -8,7 +8,7 @@ import com.exemplo.crudjpa.ExemploCrudJpaApiApplication;
 import com.exemplo.crudjpa.domain.model.Carro;
 import com.exemplo.crudjpa.infraestrutura.CrudJPA;
 
-public class BuscarCarro {
+public class AtualizarCarro {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new SpringApplicationBuilder(ExemploCrudJpaApiApplication.class)
@@ -17,9 +17,12 @@ public class BuscarCarro {
 		
 		CrudJPA crudJpa = applicationContext.getBean(CrudJPA.class);
 		
-		Carro carro = crudJpa.buscar(1L);
+		Carro carro = new Carro();
+		carro.setId(1L);
+		carro.setNome("McLaren");
 		
-		System.out.println(carro.getNome());
+		crudJpa.salvar(carro);
+		System.out.printf("%d - %s\n", carro.getId(), carro.getNome());
 	}
 	
 }

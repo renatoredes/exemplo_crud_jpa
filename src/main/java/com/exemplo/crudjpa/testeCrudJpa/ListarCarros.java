@@ -1,4 +1,6 @@
-package com.exemplo.crudjpa.jpa;
+package com.exemplo.crudjpa.testeCrudJpa;
+
+import java.util.List;
 
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -8,7 +10,7 @@ import com.exemplo.crudjpa.ExemploCrudJpaApiApplication;
 import com.exemplo.crudjpa.domain.model.Carro;
 import com.exemplo.crudjpa.infraestrutura.CrudJPA;
 
-public class RemoverCarro {
+public class ListarCarros {
 
 	public static void main(String[] args) {
 		ApplicationContext applicationContext = new SpringApplicationBuilder(ExemploCrudJpaApiApplication.class)
@@ -17,10 +19,11 @@ public class RemoverCarro {
 		
 		CrudJPA crudJpa = applicationContext.getBean(CrudJPA.class);
 		
-		Carro carro = new Carro();
-		carro.setId(1L);
+		List<Carro> carros = crudJpa.listar();
 		
-		crudJpa.remover(carro);
+		for (Carro carro : carros) {
+			System.out.println(carro.getNome());
+		}
 	}
 	
 }
