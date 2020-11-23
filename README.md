@@ -12,8 +12,6 @@ insert into carro (nome) values ('Jaguar');
 * Classe de Crud.
 
 `
-
-@Component
 public class CrudJPA {
 
 	@PersistenceContext
