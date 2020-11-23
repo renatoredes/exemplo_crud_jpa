@@ -42,4 +42,5 @@ public class CrudJPA {
 ## License
 MIT © [Renato Ferreira](https://github.com/renatoredes)
 
-## Linkedin [Renato Ferreira] (https://www.linkedin.com/in/renatoredes/)
+## Linkedin 
+[Renato Ferreira](https://www.linkedin.com/in/renatoredes/)
